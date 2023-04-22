@@ -3,9 +3,11 @@ import 'package:meeting_app/utils/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
+  final VoidCallback onPressed;
   const CustomButton({
     Key? key,
     required this.text,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -13,7 +15,7 @@ class CustomButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: const TextStyle(
